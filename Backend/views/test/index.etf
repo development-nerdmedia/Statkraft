@@ -1,0 +1,2 @@
+<b>hola cusine</b>
+<i><?php echo $testingvar; ?></i>

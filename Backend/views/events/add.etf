@@ -1,0 +1,71 @@
+<?php 
+$errorName = false;
+$errorNameMsg = "";
+$errorDate = false;
+$errorDateMsg = "";
+$errorImage = false;
+$errorImageMsg = "";
+$errorSave = false;
+$errorSaveMsg = "";
+if($this->existFlash())
+{    
+    $msgs = $this->getFlash();
+    if(isset($msgs["EventName"]) && $msgs["EventName"]["isError"])
+    {
+        $errorName = true;
+        $errorNameMsg = $msgs["EventName"]["message"];
+    }
+    if(isset($msgs["EventDate"]) && $msgs["EventDate"]["isError"])
+    {
+        $errorDate = true;
+        $errorDateMsg = $msgs["EventDate"]["message"];
+    }
+    if(isset($msgs["EventImage"]) && $msgs["EventImage"]["isError"])
+    {
+        $errorImage = true;
+        $errorImageMsg = $msgs["EventImage"]["message"];
+    }
+    if(isset($msgs["Save"]) && $msgs["Save"]["isError"])
+    {
+        $errorSave = true;
+        $errorSaveMsg = $msgs["Save"]["message"];
+    }
+}
+?>
+<div class="admincontainer">
+	<?php echo $this->renderElement('admin/nav'); ?>
+	<div class="adminbody">
+		<div class="listadoheader">
+			<h3>Crear nuevo evento</h3>
+			<a href="/events/list">[ X Cancelar ]</a>
+		</div>
+		<?php if($errorSave) { ?>
+    		<div class="errorAlert">
+    			<span><?php echo $errorSaveMsg; ?></span>
+    		</div>
+    	<?php } ?>
+		<div class="adminformulario">
+			<form enctype="multipart/form-data" method="post">
+				<div class="form-field">
+					<label for="eventname">Nombre:<?php echo $errorName?'<span class="redtext"> * '.$errorNameMsg.'</span>':""; ?></label>
+					<input type="text" id="eventname" name="EventName" required placeholder="Ingrese el nombre" value="<?php echo $this->getLastValue("EventName"); ?>">
+				</div>
+				<div class="form-field">
+					<label for="description">Descripci&oacute;n:</label>
+					<textarea type="text" id="description" name="Description" placeholder="Ingrese la descripci&oacute;n" value="<?php echo $this->getLastValue("Description"); ?>"></textarea>
+				</div>
+				<div class="form-field">
+					<label for="eventdate">Fecha:<?php echo $errorDate?'<span class="redtext"> * '.$errorDateMsg.'</span>':""; ?></label>
+					<input type="date" id="eventdate" name="EventDate" required value="<?php echo $this->getLastValue("EventDate"); ?>">
+				</div>
+				<div class="form-field">
+					<label for="eventimage">Nombre:<?php echo $errorImage?'<span class="redtext"> * '.$errorImageMsg.'</span>':""; ?></label>
+					<input type="file" id="eventimage" name="EventImage">
+				</div>
+				<div class="form-button">
+					<button type="submit">Crear</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

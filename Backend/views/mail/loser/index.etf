@@ -1,0 +1,298 @@
+<html><head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Profuturo</title>
+  <style type="text/css">
+    #outlook a {
+      padding: 0;
+    }
+
+    body {
+      width: 100% !important;
+      min-width: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0 auto;
+      padding: 0;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    table.pagebody {
+      height: auto;
+      width: 100%;
+    }
+
+    table[class="liquid"],
+    td[class="liquid"] {
+      width: 100% !important;
+      clear: both !important;
+      min-width: 100% !important;
+    }
+
+    table.container table.row {
+      display: block;
+    }
+
+    td.wrapper {
+      padding: 10px 0px 0px 0px;
+      position: relative;
+    }
+
+    table.columns {
+      margin: 0 auto;
+    }
+
+    table.docerow {
+      width: 600px;
+    }
+
+    .panel {
+      background: #f2f2f2 !important;
+      border: 1px solid #d9d9d9 !important;
+      padding: 10px !important;
+    }
+
+    div,
+    p,
+    a,
+    i,
+    td {
+      -webkit-text-size-adjust: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .img-inline {
+      display: inline-block !important;
+      float: none !important;
+    }
+
+    .ExternalClass table[class='ecxpagebody'] .ecxcontainer {
+      width: 600px !important;
+    }
+
+    .ExternalClass table.ecxfixie9 {
+      width: 600px !important;
+      height: auto;
+      margin: 0 auto !important;
+      margin: 0 auto !important;
+    }
+
+    @media screen and (max-width: 480px) {
+      table.fullwidth {
+        width: 100% !important;
+        float: none !important;
+        table-layout: fixed;
+      }
+
+      td.padding20 {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      td.spacercinco {
+        width: 5% !important;
+      }
+
+      table.fullwidth .tablas-responsive {
+        width: 80% !important;
+      }
+
+      table.fullwidth .tablas-responsive table,
+      table.fullwidth .tablas-responsive table td {
+        width: 75% !important;
+      }
+
+      table.fullwidth .tablas-responsive table td .img-responsive {
+        width: 100% !important;
+      }
+
+      table.fullwidth .tablas-responsive table td .btn-responsive {
+        width: 60% !important;
+      }
+
+      table.fullwidth .tablas-responsive table td p.letter {
+        font-size: 1.2em;
+        line-height: 20px;
+      }
+
+      table.columns .containermid td p.letter-letter-big {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      table.columns .containermid td p.letter-small {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    @media screen and (min-width: 481px) {
+      .desktop-footer-right {
+        margin-left: 34px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+<table class="pagebody" width="100%">
+  <tbody>
+  <tr>
+    <td class="centermobile fixie9" align="center" valign="top" width="100%" style="margin: 0 auto !important;">
+      <center>
+      <table class="container" width="600" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto !important;">
+          <tbody>
+          <tr>
+            <td width="600" valign="top" class="fullwidth">
+              <img src="http://<?php echo str_replace(Configure::read("cmssd").".", "", $_SERVER['SERVER_NAME']); ?>/img/mail/1/section-1.png" width="600" style="float:none !important; display: block;" border="0">
+            </td>
+          </tr>
+          <tr>
+            <td class="centermobile fixie9" align="center" valign="top" width="100%" style="margin: 0 auto !important;">
+              <center>
+              <table class="container" width="600" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto !important;" bgcolor="#FFFFFF">
+                <tbody>
+                  <tr>
+                    <td height="25"></td>
+                  </tr>  
+                  <tr>
+                    <td align="center" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 32px;font-weight: 700; color: #C72929; line-height: 38.5px;">¡Uy! La próxima<br>tendrás más suerte</td>
+                  </tr>
+                  <tr>
+                    <td height="20"></td>
+                  </tr>  
+                  <tr>
+                    <td align="center" valign="top" style="font-family: Arial, Helvetica, sans-serif;font-size: 20px;font-weight: normal; color: #8A8A8A; line-height: 23px;">Pero disfruta tu delicioso Huevito de<br>Pascua porque ya estás participando<br><span style="color: #C72929; font-weight: bold;">del sorteo de una de las bicicletas que<br>se realizarán: <span style="letter-spacing: -2.7px;">2 4 . 0 3 ,</span> <span style="letter-spacing: -2.7px;">0 2 . 0 4</span> y <span style="letter-spacing: -2.7px;">1 2 . 0 4</span></span></td>
+                  </tr> 
+                </tbody>
+              </table>
+              </center>
+            </td>
+          </tr>
+          <tr>
+            <td width="600" valign="top" class="fullwidth">
+              <img src="http://<?php echo str_replace(Configure::read("cmssd").".", "", $_SERVER['SERVER_NAME']); ?>/img/mail/1/section-2.png" width="600" style="float:none !important; display: block;" border="0">
+            </td>
+          </tr> 
+          <tr>
+          </tr>
+          <tr>
+            <td class="centermobile fixie9" align="center" valign="top" width="100%" style="margin: 0 auto !important;">
+              <center>
+              <table class="container" width="600" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto !important;" bgcolor="#66A92A">
+                <tbody>
+                  <tr>
+                    <td height="11"></td>
+                  </tr> 
+                  <tr>
+                    <td align="center" valign="top"><a href="http://<?php echo str_replace(Configure::read("cmssd").".", "", $_SERVER['SERVER_NAME']); ?>/terminos" style="font-family: Arial, Helvetica, sans-serif;font-size: 18px;font-weight: 400; color: #FFFFFF; line-height: 25px; text-decoration: underline;">Leer términos y condiciones.</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              </center>
+            </td>
+          </tr>
+          <tr>
+              <td width="600" valign="top" class="fullwidth">
+                <img src="http://<?php echo str_replace(Configure::read("cmssd").".", "", $_SERVER['SERVER_NAME']); ?>/img/mail/1/section-3.png" width="600" style="float:none !important; display: block;" border="0">
+              </td>
+          </tr>
+          <tr>
+              <td class="centermobile fixie9" align="center" valign="top" width="100%" style="margin: 0 auto !important;">
+                <center>
+                <table class="container" width="600" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto !important;" bgcolor="#C72929">
+                  <tbody>
+                    <tr>
+                      <td align="center" valign="top">
+                        <a href="http://<?php echo str_replace(Configure::read("cmssd").".", "", $_SERVER['SERVER_NAME']); ?>" target="_blank"><img src="http://<?php echo str_replace(Configure::read("cmssd").".", "", $_SERVER['SERVER_NAME']); ?>/img/mail/1/btn.png" width="232"  alt="boton tienes otro codigo" style="margin-top: -7px;"></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                </center>
+              </td>
+          </tr>  
+
+          <tr>
+                <td width="600" valign="top" class="fullwidth">
+                  <img src="http://<?php echo str_replace(Configure::read("cmssd").".", "", $_SERVER['SERVER_NAME']); ?>/img/mail/1/section-4.png" width="600" style="float:none !important; display: block;" border="0">
+                </td>
+          </tr>
+          <tr>
+                <td class="centermobile fixie9" align="center" valign="top" width="100%" style="margin: 0 auto !important;">
+                  <center>
+                  <table class="container" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#C72929" style="margin: 0 auto !important;" >
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table width="510" align="center" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td height="22"></td>
+                              </tr> 
+                              <tr>
+                                <td width="510" align="center" valign="top">
+                                  <p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;font-weight: normal; color: #FFFFFF; line-height: 16.4px; margin-top: 0; margin-bottom: 0;">
+                                    Promoción válida del 15 de marzo al 12 de abril del 2021 en Lima Metropolitana. Stock: 290 kits de pascua y 03 bicicletas. El participante debe conservar el empaque del producto con el que participa. Participan exclusivamente los productos detallados en los términos y condiciones aplicables y que deben ser consultados en<br><span style="letter-spacing: -1.5px;">w w w . e l h u e v o d e o r o a m b r o s o l i . c o m .</span>
+                                  </p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height="24"></td>
+                              </tr> 
+                              <tr>
+                                <td width="510" align="center" valign="top">
+                                  <p style="font-family: Arial, Helvetica, sans-serif;font-size: 14px;font-weight: normal; color: #FFFFFF; line-height: 16.4px; margin-top: 0; margin-bottom: 0;">
+                                    Ambrosoli | Todos los derechos reservados Ambrosoli S.A. | 2021
+                                  </p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td height="36"></td>
+                              </tr> 
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </center>
+                </td>
+          </tr>
+          
+
+
+
+         
+
+
+
+
+          <!-- End Banner -->
+         
+
+          
+          <!-- End Body -->
+          <!-- Footer -->
+          
+          <!-- End Footer -->
+        </tbody>
+      </table>
+      </center>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+</body></html>

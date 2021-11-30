@@ -1,0 +1,126 @@
+<?php 
+$errorName = false;
+$errorNameMsg = "";
+$errorUbigeo = false;
+$errorUbigeoMsg = "";
+$errorThumbnail = false;
+$errorThumbnailMsg = "";
+$errorSave = false;
+$errorSaveMsg = "";
+if($this->existFlash())
+{    
+    $msgs = $this->getFlash();
+    if(isset($msgs["PointName"]) && $msgs["Name"]["isError"])
+    {
+        $errorName = true;
+        $errorNameMsg = $msgs["Name"]["message"];
+    }
+    if(isset($msgs["UbigeoId"]) && $msgs["Name"]["isError"])
+    {
+        $errorUbigeo = true;
+        $errorUbigeoMsg = $msgs["Name"]["message"];
+    }
+    if(isset($msgs["Thumbnail"]) && $msgs["Name"]["isError"])
+    {
+        $errorThumbnail = true;
+        $errorThumbnailMsg = $msgs["Name"]["message"];
+    }
+    if(isset($msgs["Save"]) && $msgs["Save"]["isError"])
+    {
+        $errorSave = true;
+        $errorSaveMsg = $msgs["Save"]["message"];
+    }
+}
+$this->addJSFile('js/admin/addpoint.js');
+?>
+<div class="admincontainer">
+	<?php echo $this->renderElement('admin/nav'); ?>
+	<div class="adminbody">
+		<div class="listadoheader">
+			<h3>Editando punto de reciclaje: <?php echo $recyclepoint->PointName ?></h3>
+			<a href="/recyclepoints/list">[ X Cancelar ]</a>
+		</div>
+		<?php if($errorSave) { ?>
+    		<div class="errorAlert">
+    			<span><?php echo $errorSaveMsg; ?></span>
+    		</div>
+    	<?php } ?>
+		<div class="adminformulario">
+			<form enctype="multipart/form-data" method="post">
+				<div class="form-field">
+					<label for="pointname">Nombre:<?php echo $errorName?'<span class="redtext"> * '.$errorNameMsg.'</span>':""; ?></label>
+					<input type="text" id="pointname" name="PointName" required placeholder="Ingrese el nombre" value="<?php echo $this->getLastValue("PointName", $recyclepoint->PointName); ?>" />
+				</div>
+				<div class="form-field">
+					<label for="address">Direcci&oacute;n:</label>
+					<input type="text" id="address" name="Address" placeholder="Ingrese la direcci&oacute;n" value="<?php echo $this->getLastValue("Address", $recyclepoint->Address); ?>" />
+				</div>
+				<div class="form-field">
+					<label for="telephone">Tel&eacute;fono</label>
+					<input type="text" id="telephone" name="Telephone" placeholder="Ingrese el tel&eacute;fono" value="<?php echo $this->getLastValue("Telephone", $recyclepoint->Telephone); ?>" />
+				</div>
+				<div class="form-field">
+					<label for="hours">Horas:</label>
+					<input type="text" id="hours" name="Hours" placeholder="Ingrese las Horas" value="<?php echo $this->getLastValue("Hours", $recyclepoint->Hours); ?>" />
+				</div>
+				<div class="form-field row">
+					<div class="col-6">
+						<label for="coordinatey">Latitud:</label>
+						<input type="number" id="coordinatey" name="CoordinateY" placeholder="Ingrese la latitud" step="0.0000000000001" value="<?php echo $this->getLastValue("CoordinateY", $recyclepoint->Latitude); ?>" />
+					</div>
+					<div class="col-6">
+						<label for="coordinatex">Longitud:</label>
+						<input type="number" id="coordinatex" name="CoordinateX" placeholder="Ingrese la longitud" step="0.0000000000001" value="<?php echo $this->getLastValue("CoordinateX", $recyclepoint->Longitude); ?>" />
+					</div>
+				</div>
+				<div class="form-field row">
+					<div class="col-4">
+						<label for="departamento">Departamento:<?php echo $errorUbigeo?'<span class="redtext"> * '.$errorUbigeoMsg.'</span>':""; ?></label>
+						<select name="Departamento" id="departamento">
+							<option value="">Seleccione un departamento</option>
+							<?php foreach($departamentos as $departamento){ ?>
+								<option value="<?php echo $departamento->Id; ?>"<?php echo $departamento->Id == $selecteddept?" selected":"" ?>><?php echo $departamento->Name; ?></option>
+							<?php } ?>
+						</select>
+					</div>
+					<div class="col-4">
+					<label for="provincia">Provincia:<?php echo $errorUbigeo?'<span class="redtext"> * '.$errorUbigeoMsg.'</span>':""; ?></label>
+						<select name="Provincia" id="provincia">
+							<option value="">Seleccione una provincia</option>
+							<?php foreach($provincias as $provincia){ ?>
+								<option value="<?php echo $provincia->Id; ?>"<?php echo $provincia->Id == $selectedprov?" selected":"" ?>><?php echo $provincia->Name; ?></option>
+							<?php } ?>
+						</select>
+					</div>
+					<div class="col-4">
+					<label for="ubigeoid">Distrito:<?php echo $errorUbigeo?'<span class="redtext"> * '.$errorUbigeoMsg.'</span>':""; ?></label>
+						<input type="hidden" id="distrito" value="<?php echo $this->getLastValue("UbigeoId", $recyclepoint->UbigeoId); ?>" />
+						<select name="UbigeoId" id="ubigeoid" required>
+							<option value="">Seleccione un distrito</option>
+							<?php foreach($distritos as $distrito){ ?>
+								<option value="<?php echo $distrito->Id; ?>"<?php echo $distrito->Id == $recyclepoint->UbigeoId?" selected":"" ?>><?php echo $distrito->Name; ?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-field">
+					<label for="thumbnail">Thumbnail:</label>
+					<input type="file" id="thumbnail" name="Thumbnail" />
+					<img src="/storage/puntos/<?php echo $recyclepoint->Thumbnail; ?>" />
+					<input type="hidden" name="ActualImage" value="<?php echo $recyclepoint->Thumbnail; ?>" />
+				</div>				
+				<div class="form-field row">
+					<div class="col-4">
+						<label for="options">Opciones de reciclaje:</label>
+						<?php foreach($recycleoptions as $recicleoption) { ?>
+						<input type="checkbox" id="recycleoption<?php echo $recicleoption->Id; ?>" name="RecycleOption[]" value="<?php echo $recicleoption->Id; ?>"<?php echo in_array($recicleoption->Id, $selectedOptions)?" checked":"" ?> /><?php echo $recicleoption->OptionName; ?><br />
+						<?php } ?>
+					</div>
+				</div>				
+				<div class="form-button">
+					<button type="submit">Actualizar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

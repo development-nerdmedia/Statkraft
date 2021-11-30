@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Handle Front Controller...
+    RewriteRule ^ public/ [L]
+</IfModule>

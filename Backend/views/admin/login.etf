@@ -1,0 +1,18 @@
+<div class="login">
+	<div class="instructions">
+		<span>Por favor ingrese sus credenciales</span>
+		<form enctype="application/x-www-form-urlencoded" method="post" class="loginform">
+			<div class="form-input">
+				<label for="username">Usuario</label>
+				<input type="text" name="Username" id="username" />
+			</div>
+			<div class="form-input">
+				<label for="username">Contrase&ntilde;a</label>
+				<input type="password" name="Password" id="password" />
+			</div>
+			<div class="form-input">
+				<button type="submit">Acceder</button>
+			</div>
+		</form>
+	</div>
+</div>

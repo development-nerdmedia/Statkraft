@@ -1,0 +1,12 @@
+body {
+    font-family: $font-family !important;
+    transition: all .2 ease;
+}
+
+.hide {
+    display: none;
+}
+
+.stk-bg {
+    background-color: $white;
+}

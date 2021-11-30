@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="/css/admin.css" />
+		<script type="text/javascript">
+			var apiBaseUrl = '<?php echo Configure::read("ApiBaseUrl", "/api"); ?>';
+		</script>
+	</head>
+	<body>
+		<div class="admincontent">
+    		<?php echo $this->renderElement('admin/header'); ?>
+    		<?php echo $content_for_layout; ?>
+		</div>
+		<?php 
+		$jslist = $this->getJSList();
+		foreach ($jslist as $jsfile)
+		{
+		?>
+		<script defer type="text/javascript" src="/<?php echo $jsfile; ?>"></script>
+		<?php
+		}
+		?>
+	</body>
+</html>

@@ -1,0 +1,262 @@
+.schedule {
+
+    @include bp(medium) {
+        width: 100%;
+        // height: 100%;
+    }
+
+    &__title {
+        font-size: 70px;
+        line-height: 75px;
+        font-weight: bold;
+        color: $gray-book;
+        text-transform: uppercase;
+        margin-bottom: 48px;
+
+        @include bp(medium) {
+            min-width: 275px;
+            font-size: 30px;
+            line-height: 50px;
+            margin: 0;
+        }
+    }
+
+    &__body-container {
+        max-width: 482px;
+        width: 100%;
+        min-height: 385px;
+
+        @include bp(medium) {
+            //max-width: 270px;
+            min-height: 300px;
+        }
+    }
+
+    &__body {
+        padding-bottom: 85px;
+
+        @include bp(medium) {
+            padding-bottom: 70px;
+        }
+    }
+
+    &__month {
+        font-size: 32px;
+        line-height: 44px;
+        color: $blue-principal;
+
+        @include bp(medium) {
+            font-size: 22px;
+            line-height: 34px;
+        }
+    }
+
+    &__date {
+        margin-top: 10px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 50px 1fr 100px;
+        width: 100%;
+        gap: 10px;
+
+        &:hover {
+            //Show button
+            .hover-active {
+                opacity: 1;
+            }
+        }
+
+        @include bp(medium) {
+            display: grid;
+            grid-template-columns: 50px 1fr 70px;
+            gap: 5px;
+        }
+    }
+
+    &__date__content {
+        margin-top: 33px;
+        margin-left: 4px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        @include bp(medium) {
+            margin-top: 15px;
+            margin-left: 0;
+            max-width: 100%;
+        }
+    }
+
+    &__day {
+        width: 50px;
+        height: 47px;
+        color: $blue-principal;
+        background-color: $sky-blue;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 9px;
+
+        @include bp(medium) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__day-text {
+        font-size: 10px;
+        line-height: 14px;
+        text-transform: uppercase;
+
+        @include bp(medium) {
+            font-size: 8px;
+            line-height: 12px;
+        }
+    }
+
+    &__day-number {
+        font-size: 24px;
+        line-height: 20px;
+        font-weight: bold;
+
+        @include bp(medium) {
+            font-size: 20px;
+            line-height: 18px;
+        }
+    }
+
+    &__day-paragraph {
+        color: $gray;
+        display: flex;
+        align-items: center;
+        //max-width: 193px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 26px;
+
+        @include bp(medium) {
+            font-size: 13px;
+            line-height: 16px;
+            //max-width: 165px;
+        }
+    }
+
+    &__hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity .2s ease;
+
+        @include bp(medium) {
+            position: relative;
+            opacity: 1;
+        }
+
+        a {
+            color: $blue-principal;
+            font-size: 12px;
+            line-height: 13px;
+            font-weight: bold;
+            padding: 7px 19px;
+            border: 1px solid $blue-principal;
+            border-radius: 22px;
+            transition: all .2s ease;
+
+            @include bp(medium) {
+                padding: 7px 11.5px;
+                color: $orange-button;
+                border: 1px solid $orange-button;
+            }
+
+            &:hover {
+                color: $orange-button;
+                border: 1px solid $orange-button;
+            }
+
+            > * {
+                pointer-events: none;
+            }
+        }
+
+        span {
+            @include bp(medium) {
+                display: none;
+            }
+        }
+    }
+}
+
+// SWIPER SCHEDULE
+.swiper {
+    width: 100%;
+    // height: 100%;
+}
+
+.swiper-button-prev {
+    background-image: url('../images/prev.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    top: unset;
+    bottom: 0;
+
+    @include bp (medium) {
+        background-size: 80% auto;
+    }
+
+    span {
+        position: absolute;
+        font-size: 12px;
+        color: $gray;
+        left: 40px;
+
+        @include bp (medium) {
+            font-size: 9px;
+            left: 34px;
+        }
+
+        &:hover {
+            color: $orange-button;
+        }
+    }
+}
+
+.swiper-button-next {
+    background-image: url('../images/next.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    object-fit: cover;
+    top: unset;
+    bottom: 0;
+
+    @include bp (medium) {
+        background-size: 80% auto;
+    }
+
+    span {
+        position: absolute;
+        font-size: 12px;
+        color: $gray;
+        right: 40px;
+        transition: all .2s ease;
+
+        @include bp (medium) {
+            font-size: 9px;
+            right: 34px;
+        }
+
+        &:hover {
+            color: $orange-button;
+        }
+    }
+}
+
+.swiper-button-prev::after , .swiper-button-next::after {
+    display: none;
+}

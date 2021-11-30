@@ -1,0 +1,436 @@
+<?php 
+    $error = [
+        "ProductoId" => false,
+        "NumeroLote" => false,
+        "FechaProduccion" => false,
+        "FormSorteoTC" => false,
+        "FormSorteoPrivacity" => false
+    ];
+    if($this->existFlash())
+    {
+        $msgs = $this->getFlash();
+        foreach ($msgs as $msg)
+        {
+            $error[$msg['field']] = true;
+        }
+    }
+    $this->addCSSFile('css/app.css');
+    $this->addJSFile('js/app.js');
+?>
+
+      <main>
+        <section class="section-decision">
+          <div class="section-decision__container">
+            <div class="section-decision__content">
+              <h2 class="section-decision__title">Cada decisión cuenta</h2>
+              <p class="section-decision__paragraph mobile">En el futuro necesitamos:<br> Menos fábricas expulsando humo hacia el cielo. Más cielos que dejen ver el sol en todo su esplendor. Menos irrespirables horas en el tráfico.<br>Más niños disfrutando del aire puro en costa, sierra y selva. Menos ríos contaminados.<br>Más energía limpia que movilice al planeta.</p>
+              <p class="section-decision__paragraph desktop">En el futuro necesitamos:<br>Menos fábricas expulsando humo hacia el cielo. Más cielos que dejen ver el sol en todo su esplendor.<br> Menos irrespirables horas en el tráfico. Más niños disfrutando del aire puro en costa, sierra y selva. Menos ríos contaminados.<br> Más energía limpia que movilice al planeta.</p>
+              <div class="section-decision__icon">
+                <a href="#">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="30" r="29" stroke="#626385" stroke-width="2"/>
+                    <path d="M30.0248 45C29.6591 45 29.2941 44.8607 29.0148 44.5815L19.4184 34.985C18.8605 34.4272 18.8605 33.5229 19.4184 32.965C19.9763 32.4072 20.8805 32.4072 21.4384 32.965L31.0348 42.5615C31.5927 43.1193 31.5927 44.0236 31.0348 44.5815C30.7555 44.8607 30.3905 45 30.0248 45Z" fill="#626385"/>
+                    <path d="M30.0248 45C29.6591 45 29.2941 44.8607 29.0148 44.5815C28.457 44.0236 28.457 43.1193 29.0148 42.5615L38.6113 32.965C39.1691 32.4072 40.0734 32.4072 40.6313 32.965C41.1891 33.5229 41.1891 34.4272 40.6313 34.985L31.0348 44.5815C30.7555 44.8607 30.3905 45 30.0248 45Z" fill="#626385"/>
+                    <path d="M30.0248 45C29.2363 45 28.5963 44.36 28.5963 43.5714V16.4286C28.5963 15.64 29.2363 15 30.0248 15C30.8134 15 31.4534 15.64 31.4534 16.4286V43.5714C31.4534 44.36 30.8134 45 30.0248 45Z" fill="#626385"/>
+                    </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-banner-video">
+          <div class="section-banner-video__container">
+            <div class="section-banner-video__content">
+              <div class="section-banner-video__left-half">
+                <div class="section-banner-video__img-left">
+                  <div class="section-banner-video__text-left">MENOS</div>
+                </div>
+              </div>
+              <div class="section-banner-video__right-half">
+                <div class="section-banner-video__text-right">MÁS</div>
+              </div>
+              <div class="section-banner-video__play">
+                <a href="javascript:void(0)" data-modal="firstVideoModal">
+                  <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="37.5" cy="37.5" r="37.5" fill="#E84E0F"/>
+                    <path d="M47.8118 36.507L29.796 26.2368C29.5101 26.078 29.1877 25.9964 28.8606 26.0001C28.5335 26.0039 28.2131 26.0928 27.9308 26.2581C27.6486 26.4234 27.4143 26.6595 27.2511 26.9429C27.0878 27.2264 27.0013 27.5475 27 27.8746V48.1254C27.0013 48.4525 27.0878 48.7736 27.2511 49.0571C27.4143 49.3405 27.6486 49.5766 27.9308 49.7419C28.2131 49.9072 28.5335 49.9961 28.8606 49.9999C29.1877 50.0036 29.5101 49.922 29.796 49.7632L47.8118 39.493C48.0751 39.3427 48.294 39.1254 48.4462 38.8632C48.5984 38.601 48.6786 38.3032 48.6786 38C48.6786 37.6968 48.5984 37.399 48.4462 37.1368C48.294 36.8746 48.0751 36.6573 47.8118 36.507V36.507Z" fill="white"/>
+                    </svg>
+                </a href="#">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-manual">
+          <div class="section-manual__container">
+            <div class="section-manual__content">
+              <div class="section-manual__left">
+                <div class="section-manual__title">
+                  Contribuye con la preservación del planeta
+                </div>
+                <div class="section-manual__paragraph desktop">
+                  Un futuro neutro en carbono y libre de combustibles fósiles que contaminan<br>el planeta es posible si todos nos<br>unimos para lograrlo.
+                </div>
+                <div class="section-manual__paragraph mobile">
+                  Un futuro neutro en carbono y libre de combustibles fósiles que contaminan el planeta es posible si todos nos unimos para lograrlo.
+                </div>
+              </div>
+              <div class="section-manual__right">
+                <div class="card">
+                  <div class="card__img">
+                    <img src="./images/book-01.png" alt="Libro">
+                  </div>
+                  <div class="card__button">
+                    <!-- <a href="#" class="button button--book">DESCARGAR</a> -->
+                    <a href="#" class="button button--book disabled">PRÓXIMAMENTE</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card__img">
+                    <img src="./images/book-02.png" alt="Libro">
+                  </div>
+                  <div class="card__button">
+                    <!-- <a href="#" class="button button--book">DESCARGAR</a> -->
+                    <a href="#" class="button button--book disabled">PRÓXIMAMENTE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-statkraft">
+          <video loop muted autoplay playsinline class="section-statkraft__video">
+            <source src="videos/section-statkraft-background.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source src="videos/section-statkraft-background_mobile.mp4" type="video/mp4" media="(min-width: 769px)">
+            <source src="videos/section-statkraft-background.mp4" type="video/mp4">
+         </video>
+          <div class="section-statkraft__container">
+            <div class="section-statkraft__content">
+              <h2 class="section-statkraft__title">Statkraft Perú</h2>
+              <p class="section-statkraft__paragraph">Hoy, existimos con el propósito de liderar la transición a energía renovable, la única que puede impulsar el progreso y las oportunidades en el mundo, abasteciendo a todas las industrias y negocios. Nuestro futuro depende de cada decisión que tomemos hoy.  Súmate y conecta con el futuro.</p>
+              <div class="section-statkraft__button">
+                <a href="https://www.statkraft.com.pe/nuestra-oferta/suministro-electrico/" target="_blank" class="button button--orange button--statkraft">CONOCE MÁS</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-testimony">
+          <div class="section-testimony__container">
+            <div class="section-testimony__content">
+
+              <div class="section-testimony__title">Testimonios</div>
+              <div class="section-testimony__cards">
+                <div class="cards-slider">
+                  <div class="swiper" id="SliderCards">
+                    <div class="swiper-wrapper section-cards__content">
+                          <div class="swiper-slide">
+                            <div class="card-testimony">
+                              <div class="card-testimony__container">
+                                <div class="card-testimony__content">
+                                  <a href="javascript:void(0)"  data-modal="secondVideoModal" class="card-testimony__img">
+                                    <img src="./images/testimony-anibal.png" alt="testimonios">
+                                    <div class="card-testimony__play">
+                                      <span>
+                                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <circle cx="30" cy="30" r="29" stroke-width="2"></circle>
+                                          <path d="M42.1875 28.4531L23.5219 17.8125C23.2256 17.6479 22.8916 17.5634 22.5527 17.5673C22.2138 17.5711 21.8818 17.6633 21.5894 17.8346C21.297 18.0058 21.0542 18.2504 20.8851 18.5441C20.716 18.8378 20.6264 19.1704 20.625 19.5093V40.4906C20.6264 40.8295 20.716 41.1622 20.8851 41.4559C21.0542 41.7495 21.297 41.9941 21.5894 42.1654C21.8818 42.3367 22.2138 42.4288 22.5527 42.4327C22.8916 42.4365 23.2256 42.352 23.5219 42.1875L42.1875 31.5468C42.4603 31.3911 42.687 31.166 42.8448 30.8943C43.0025 30.6226 43.0856 30.3141 43.0856 30C43.0856 29.6858 43.0025 29.3773 42.8448 29.1056C42.687 28.834 42.4603 28.6088 42.1875 28.4531V28.4531Z" fill="white"/>
+                                          <path d="M30 0C24.0666 0 18.2664 1.75947 13.3329 5.05591C8.39943 8.35235 4.55426 13.0377 2.28363 18.5195C0.0129984 24.0013 -0.581101 30.0333 0.576455 35.8527C1.73401 41.6721 4.59123 47.0176 8.78681 51.2132C12.9824 55.4088 18.3279 58.266 24.1473 59.4235C29.9667 60.5811 35.9987 59.987 41.4805 57.7164C46.9623 55.4457 51.6476 51.6006 54.9441 46.6671C58.2405 41.7336 60 35.9334 60 30C60 22.0435 56.8393 14.4129 51.2132 8.78679C45.5871 3.1607 37.9565 0 30 0V0ZM30 56.25C24.8082 56.25 19.7331 54.7105 15.4163 51.8261C11.0995 48.9417 7.73497 44.842 5.74817 40.0454C3.76137 35.2489 3.24154 29.9709 4.2544 24.8789C5.26726 19.7869 7.76733 15.1096 11.4385 11.4384C15.1096 7.76732 19.7869 5.26725 24.8789 4.25439C29.9709 3.24152 35.2489 3.76136 40.0454 5.74816C44.842 7.73496 48.9417 11.0995 51.8261 15.4163C54.7105 19.7331 56.25 24.8082 56.25 30C56.25 36.9619 53.4844 43.6387 48.5616 48.5615C43.6387 53.4844 36.9619 56.25 30 56.25Z" fill="white"/>
+                                        </svg>
+                                      </span>
+                                    </div>
+                                  </a>
+                                  <div class="card-testimony__body">
+                                    <div class="card-testimony__title">Anibal</div>
+                                    <p class="card-testimony__paragraph">Hidrólogo y trabaja hace muchos años en la central hidroeléctrica. Ahí ha sido testigo del influjo casi mágico del agua.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <div class="swiper-slide">
+                            <div class="card-testimony">
+                              <div class="card-testimony__container">
+                                <div class="card-testimony__content">
+                                  <a href="javascript:void(0)"  data-modal="secondVideoModal" class="card-testimony__img">
+                                    <img src="./images/card-2.png" alt="testimonios">
+                                    <div class="card-testimony__play">
+                                      <span>
+                                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <circle cx="30" cy="30" r="29" stroke-width="2"></circle>
+                                          <path d="M42.1875 28.4531L23.5219 17.8125C23.2256 17.6479 22.8916 17.5634 22.5527 17.5673C22.2138 17.5711 21.8818 17.6633 21.5894 17.8346C21.297 18.0058 21.0542 18.2504 20.8851 18.5441C20.716 18.8378 20.6264 19.1704 20.625 19.5093V40.4906C20.6264 40.8295 20.716 41.1622 20.8851 41.4559C21.0542 41.7495 21.297 41.9941 21.5894 42.1654C21.8818 42.3367 22.2138 42.4288 22.5527 42.4327C22.8916 42.4365 23.2256 42.352 23.5219 42.1875L42.1875 31.5468C42.4603 31.3911 42.687 31.166 42.8448 30.8943C43.0025 30.6226 43.0856 30.3141 43.0856 30C43.0856 29.6858 43.0025 29.3773 42.8448 29.1056C42.687 28.834 42.4603 28.6088 42.1875 28.4531V28.4531Z" fill="white"/>
+                                          <path d="M30 0C24.0666 0 18.2664 1.75947 13.3329 5.05591C8.39943 8.35235 4.55426 13.0377 2.28363 18.5195C0.0129984 24.0013 -0.581101 30.0333 0.576455 35.8527C1.73401 41.6721 4.59123 47.0176 8.78681 51.2132C12.9824 55.4088 18.3279 58.266 24.1473 59.4235C29.9667 60.5811 35.9987 59.987 41.4805 57.7164C46.9623 55.4457 51.6476 51.6006 54.9441 46.6671C58.2405 41.7336 60 35.9334 60 30C60 22.0435 56.8393 14.4129 51.2132 8.78679C45.5871 3.1607 37.9565 0 30 0V0ZM30 56.25C24.8082 56.25 19.7331 54.7105 15.4163 51.8261C11.0995 48.9417 7.73497 44.842 5.74817 40.0454C3.76137 35.2489 3.24154 29.9709 4.2544 24.8789C5.26726 19.7869 7.76733 15.1096 11.4385 11.4384C15.1096 7.76732 19.7869 5.26725 24.8789 4.25439C29.9709 3.24152 35.2489 3.76136 40.0454 5.74816C44.842 7.73496 48.9417 11.0995 51.8261 15.4163C54.7105 19.7331 56.25 24.8082 56.25 30C56.25 36.9619 53.4844 43.6387 48.5616 48.5615C43.6387 53.4844 36.9619 56.25 30 56.25Z" fill="white"/>
+                                        </svg>
+                                      </span>
+                                    </div>
+                                  </a>
+                                  <div class="card-testimony__body">
+                                    <div class="card-testimony__title">Jorge</div>
+                                    <p class="card-testimony__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate facilisis diam ut.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="card-testimony">
+                              <div class="card-testimony__container">
+                                <div class="card-testimony__content">
+                                  <a href="javascript:void(0)"  data-modal="secondVideoModal" class="card-testimony__img">
+                                    <img src="./images/card-3.png" alt="testimonios">
+                                    <div class="card-testimony__play">
+                                      <span>
+                                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <circle cx="30" cy="30" r="29" stroke-width="2"></circle>
+                                          <path d="M42.1875 28.4531L23.5219 17.8125C23.2256 17.6479 22.8916 17.5634 22.5527 17.5673C22.2138 17.5711 21.8818 17.6633 21.5894 17.8346C21.297 18.0058 21.0542 18.2504 20.8851 18.5441C20.716 18.8378 20.6264 19.1704 20.625 19.5093V40.4906C20.6264 40.8295 20.716 41.1622 20.8851 41.4559C21.0542 41.7495 21.297 41.9941 21.5894 42.1654C21.8818 42.3367 22.2138 42.4288 22.5527 42.4327C22.8916 42.4365 23.2256 42.352 23.5219 42.1875L42.1875 31.5468C42.4603 31.3911 42.687 31.166 42.8448 30.8943C43.0025 30.6226 43.0856 30.3141 43.0856 30C43.0856 29.6858 43.0025 29.3773 42.8448 29.1056C42.687 28.834 42.4603 28.6088 42.1875 28.4531V28.4531Z" fill="white"/>
+                                          <path d="M30 0C24.0666 0 18.2664 1.75947 13.3329 5.05591C8.39943 8.35235 4.55426 13.0377 2.28363 18.5195C0.0129984 24.0013 -0.581101 30.0333 0.576455 35.8527C1.73401 41.6721 4.59123 47.0176 8.78681 51.2132C12.9824 55.4088 18.3279 58.266 24.1473 59.4235C29.9667 60.5811 35.9987 59.987 41.4805 57.7164C46.9623 55.4457 51.6476 51.6006 54.9441 46.6671C58.2405 41.7336 60 35.9334 60 30C60 22.0435 56.8393 14.4129 51.2132 8.78679C45.5871 3.1607 37.9565 0 30 0V0ZM30 56.25C24.8082 56.25 19.7331 54.7105 15.4163 51.8261C11.0995 48.9417 7.73497 44.842 5.74817 40.0454C3.76137 35.2489 3.24154 29.9709 4.2544 24.8789C5.26726 19.7869 7.76733 15.1096 11.4385 11.4384C15.1096 7.76732 19.7869 5.26725 24.8789 4.25439C29.9709 3.24152 35.2489 3.76136 40.0454 5.74816C44.842 7.73496 48.9417 11.0995 51.8261 15.4163C54.7105 19.7331 56.25 24.8082 56.25 30C56.25 36.9619 53.4844 43.6387 48.5616 48.5615C43.6387 53.4844 36.9619 56.25 30 56.25Z" fill="white"/>
+                                        </svg>
+                                      </span>
+                                    </div>
+                                  </a>
+                                  <div class="card-testimony__body">
+                                    <div class="card-testimony__title">Jorge</div>
+                                    <p class="card-testimony__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate facilisis diam ut.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                    </div>
+                  </div>
+                  <div class="swiper-pagination" id="SliderCardsPagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-banner-recycle">
+          <div class="section-banner-recycle__container">
+            <div class="section-banner-recycle__content">
+              <h2 class="section-banner-recycle__title"><span>RECICLA,</span><br><span>conoce los puntos más cercanos</span></h2>
+              <div class="section-banner-recycle__button">
+                <a href="#" class="button button--recycle">ver más</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-suscribe">
+          <div class="section-suscribe__container">
+
+            <div class="section-suscribe__thanks" id="HomeSectionSuscribeThanks">
+              gracias
+            </div>
+
+            <div class="section-suscribe__content" id="HomeSectionSuscribeForm">
+              <div class="section-suscribe__paragraph"><span>Únete</span> y entérate como<br>ayudar al planeta</div>
+              <div class="section-suscribe__form">
+                <form id="HomeFormSuscribe" class="section-suscribe__form-control">
+                  <div class="input-control">
+                    <input type="email" name="email" class="section-suscribe__form-email" placeholder="Correo eléctronico" required>
+                  </div>
+                  <button class="section-suscribe__form-button" data-modal="suscribeModal">ENVIAR</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-schedule">
+          <div class="section-schedule__container">
+            <div class="section-schedule__content">
+              <div class="section-schedule__left-half">
+                <div class="section-schedule__left-half-container">
+                    <video loop muted autoplay playsinline class="video-background">
+                      <source src="videos/section-agenda_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+                      <source src="videos/section-agenda.mp4" type="video/mp4" media="(min-width: 769px)">
+                      <source src="videos/section-agenda.mp4" type="video/mp4">
+                   </video>
+                </div>
+              </div>
+              <div class="section-schedule__right-half">
+                <div class="section-schedule__content-calendar">
+                  <div class="schedule">
+                    <div class="schedule__title">Agenda</div>
+
+
+                    <div class="schedule__body-container">
+                      <div class="swiper" id="SliderSchedules">
+                        <div class="swiper-wrapper section-schedules-content">
+                          <div class="swiper-slide">
+                            <div class="schedule__body">
+                              <div class="schedule__month">Agosto</div>
+                              <div class="schedule__date__content">
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Lunes</div>
+                                    <div class="schedule__day-number">07</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Martes</div>
+                                    <div class="schedule__day-number">12</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Jueves</div>
+                                    <div class="schedule__day-number">18</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Viernes</div>
+                                    <div class="schedule__day-number">25</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="schedule__body">
+                              <div class="schedule__month">Agosto</div>
+                              <div class="schedule__date__content">
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Lunes</div>
+                                    <div class="schedule__day-number">07</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Martes</div>
+                                    <div class="schedule__day-number">12</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Jueves</div>
+                                    <div class="schedule__day-number">18</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Viernes</div>
+                                    <div class="schedule__day-number">25</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="schedule__body">
+                              <div class="schedule__month">Agosto</div>
+                              <div class="schedule__date__content">
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Lunes</div>
+                                    <div class="schedule__day-number">07</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Martes</div>
+                                    <div class="schedule__day-number">12</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Jueves</div>
+                                    <div class="schedule__day-number">18</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                                <div class="schedule__date">
+                                  <div class="schedule__day">
+                                    <div class="schedule__day-text">Viernes</div>
+                                    <div class="schedule__day-number">25</div>
+                                  </div>
+                                  <div class="schedule__day-paragraph">Lorem ipsum dolor sit amet</div>
+                                  <div class="schedule__hover hover-active"><a href="javascript:void(0)" data-modal="scheduleModal"><span>VER</span> MÁS</a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- <div class="swiper-slide">Slide 2</div>
+                          <div class="swiper-slide">Slide 3</div> -->
+                        </div>
+                        <div class="swiper-button-prev"><span>ANTERIOR</span></div>
+                        <div class="swiper-button-next"><span>SIGUIENTE</span></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- build modal -->
+        <section class="d-none">
+          <div id="ModalFirstVideo">
+            <div class="video1-modal-content">
+              <div class="video1-modal-content__mask">
+                <div class="video1-modal-content__video-wrapper">_here_</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="d-none">
+          <div id="ModalSecondVideo">
+            <div class="video2-modal-content">
+              <div class="video2-modal-content__mask">
+                <div class="video2-modal-content__video-wrapper">_here_</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="d-none">
+          <div id="ModalSuscribe">
+            <div class="suscribe-modal-content">
+              <div class="suscribe-modal-content__mask">
+                <div class="suscribe-modal-content__thanks">_here_</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="d-none">
+          <div id="ModalSchedule">
+            <div class="schedule-modal-content">
+              <div class="schedule-modal-content__mask">
+                <div class="schedule-modal-content__wrapper">_here_</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>

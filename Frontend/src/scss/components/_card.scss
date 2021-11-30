@@ -1,0 +1,123 @@
+.card-stk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include bp(medium) {
+        max-width: 137px;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            filter: drop-shadow(5px 5px 10px rgba(0, 43, 72, 0.25));
+        }
+    }
+
+    &__button {
+        margin-top: 28px;
+
+        @include bp(medium) {
+            margin-top: 22px;
+        }
+
+        a {
+            display: block;
+        }
+    }
+}
+
+.card-testimony {
+    width: 100%;
+    max-width: 320px;
+    min-height: 490px;
+
+    @include bp(medium) {
+        max-width: 280px;
+    }
+
+    &__img {
+        display: block;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+    }
+
+    &__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        svg {
+            path:nth-child(3), > circle {
+                transition: fill .1s ease;
+            }
+
+            &:hover {
+                fill: $orange-button;
+
+                path:nth-child(3), > circle {
+                    fill: $orange-button;
+                }
+            }
+        }
+    }
+
+    &__title {
+        color: $gray;
+        font-size: 24px;
+        line-height: 44px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        @include bp(medium) {
+            font-size: 18px;
+            line-height: 34px;
+        }
+    }
+
+    &__body {
+        padding: 10px 7px 0;
+
+        @include bp(medium) {
+            padding: 20px 7px 0;
+        }
+    }
+
+    &__paragraph {
+        color: $gray;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        //max-width: 255px;
+
+        @include bp(medium) {
+            font-size: 14px;
+            line-height: 18px;
+            margin-top: 5px;
+        }
+    }
+
+    &__coming-soon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 44px;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,6 @@
+	<div class="adminnav">
+		<ul>
+			<li><a <?php if(isset($modulo) && $modulo == "recyclepoints") {?>class="selected" <?php } ?>href="/recyclepoints/list">Puntos de Reciclaje</a></li>
+			<li><a <?php if(isset($modulo) && $modulo == "events") {?>class="selected" <?php } ?>href="/events/list">Eventos</a></li>
+		</ul>
+	</div>

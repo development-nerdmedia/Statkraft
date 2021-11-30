@@ -1,0 +1,18 @@
+      <header class="header">
+        <div class="header__container">
+          <div class="header__content">
+            <div class="header__img-background">
+            </div>
+            <div class="header__img-front" data-tilt-axis="x" data-tilt-scale="1.1" data-tilt-full-page-listening>
+            </div>
+            <div class="header__block">
+              <div class="header__buttons">
+                <a href="#" class="header__button-left button button--orange">Revisa los manuales</a>
+                <a href="#" class="header__button-right button button--white">Mira el video</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+	<?php echo $this->renderElement('nav'); ?>

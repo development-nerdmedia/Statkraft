@@ -1,0 +1,36 @@
+$m_image_common_path: '../images/' !default;
+
+@import 'base/vars';
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/keyframes';
+@import 'base/mixins';
+
+/* theme */
+@import 'theme/theme';
+
+/* Vendor */
+@import './vendor/swiper';
+@import './vendor/swal2';
+@import './vendor/pristinejs';
+@import '~leaflet/dist/leaflet.css';
+
+/* Components */
+@import 'components/button';
+@import 'components/card';
+@import 'components/schedule';
+@import 'components/modals';
+
+/* Sections */
+@import 'sections/header';
+@import 'sections/footer';
+
+/* Pages */
+@import 'pages/home';
+@import 'pages/recycling';
+@import 'pages/recycling-detail';
+
+/* To hide Main page footer */
+.footer {
+    display: none !important;
+}

@@ -1,0 +1,6 @@
+<div class="admincontainer">
+	<?php echo $this->renderElement('admin/nav'); ?>
+	<div class="adminbody">
+		<h3>Eliga una opcion en el menu de la izquierda</h3>
+	</div>
+</div>

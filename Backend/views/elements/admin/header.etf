@@ -1,0 +1,6 @@
+<div class="header">
+	<span>STATKRAFT - ADMIN</span>
+	<?php if(isset($_SESSION["logged"])) { ?>
+	<div class="logout"><a href="/logout">[ Salir ]</a></div>
+	<?php } ?>
+</div>

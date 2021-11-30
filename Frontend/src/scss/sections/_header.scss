@@ -1,0 +1,103 @@
+.header-stk {
+    &__container {
+        width: 100%;
+        height: 750px;
+
+        @include bp(medium) {
+            height: 450px;
+        }
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    &__img-background {
+        position: absolute;
+        //background-image: url('../images/banner-background.png');
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        //z-index: -20;
+        //background-attachment: fixed;
+
+        .background-video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            @include bp(medium) {
+                display: none;
+            }
+        }
+
+        .background-video-mobile{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            display: none;
+            @include bp(medium) {
+                display: unset;
+            }
+        }
+
+        @include bp(medium) {
+            background-image: url('../images/banner-background-mobile.png');
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__img-front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/banner-front.png");
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: contain;
+
+        @include bp(medium) {
+            background-image: url("../images/banner-front-mobile.png");
+        }
+    }
+
+    &__block {
+        padding: 0 0 175px;
+
+        @include bp(medium) {
+            padding: 0 0 30px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 3;
+
+        @include bp(medium) {
+            flex-direction: column;
+        }
+
+        .button {
+            margin: 0 6px;
+
+            @include bp(medium) {
+                margin: 5px 0;
+            }
+        }
+    }
+
+}

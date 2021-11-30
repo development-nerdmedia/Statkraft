@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Statkraft</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php 
+        $csslist = $this->getCSSList();
+        foreach ($csslist as $cssfile)
+        {
+    ?>
+    <link href="/<?php echo $cssfile?>" rel="stylesheet">
+    <?php
+        }
+    ?>
+  </head>
+  <body>
+    <div class="page hide" id="home">
+        <?php echo $this->renderElement('header'); ?>
+        <?php echo $content_for_layout; ?>
+        <?php echo $this->renderElement('footer'); ?>
+    </div>
+
+    <div class="page hide" id="recycling">
+      recycling
+    </div>
+
+    <div class="page hide" id="recycling_detail">
+      recycling_detail
+    </div>
+    <?php 
+    $jslist = $this->getJSList();
+    foreach ($jslist as $jsfile)
+    {
+    ?>
+    <script defer type="text/javascript" src="/<?php echo $jsfile; ?>"></script>
+    <?php
+    }
+    ?>
+  </body>
+</html>

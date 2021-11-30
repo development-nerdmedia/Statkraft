@@ -1,0 +1,65 @@
+<?php 
+$errorSave = null;
+$errorSaveMsg = "";
+if($this->existFlash())
+{    
+    $msgs = $this->getFlash();
+    if(isset($msgs["Save"]))
+    {
+        $errorSave = $msgs["Save"]["isError"];
+        $errorSaveMsg = $msgs["Save"]["message"];
+    }
+}
+?>
+<div class="admincontainer">
+	<?php echo $this->renderElement('admin/nav'); ?>
+	<div class="adminbody">
+		<div class="listadoheader">
+			<h3>Listado de puntos de reciclaje</h3>
+			<a href="/recyclepoints/add">[ + Nuevo ]</a>			
+		</div>
+		<?php if(!is_null($errorSave)){ ?>
+    		<div class="<?php echo $errorSave?"errorAlert":"errorSuccess"; ?>">
+    			<span><?php echo $errorSaveMsg; ?></span>
+    		</div>		
+		<?php } ?>		
+		<div class="adminlistado">
+			<table>
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nombre</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach($recyclepoints as $recyclepoint) { ?>
+					<tr>
+						<td><?php echo $recyclepoint->Id; ?></td>
+						<td><?php echo $recyclepoint->PointName; ?></td>
+						<td><a href="/recyclepoints/edit/<?php echo $recyclepoint->Id; ?>">Editar</a></td>
+						<td><a href="/recyclepoints/delete/<?php echo $recyclepoint->Id; ?>">Eliminar</a></td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		<?php $lastpage = ceil($total/Configure::read('pagination.perpage', 10)); ?>
+		<div class="pagination_container">
+			<div class="pagination">
+				<a href="/recyclepoints/list/1">&lt;&lt;</a></li>
+				<a href="/recyclepoints/list/<?php echo max($page - 1, 1); ?>">&lt;</a>
+				<?php for($i = 1; $i <= $lastpage; $i++){
+				    if($i > ($page - 3) && $i < ($page + 3)){
+				    ?>
+				<a <?php if($i==$page){ echo 'class="active"'; }?> href="/recyclepoints/list/<?php echo $i; ?>"><?php echo $i; ?></a>
+					<?php } ?>
+				<?php } ?>
+				<a href="/recyclepoints/list/<?php echo min($page + 1, $lastpage); ?>">&gt;</a>
+				<a href="/recyclepoints/list/<?php echo $lastpage ?>">&gt;&gt;</a>
+			</div>
+		</div>
+
+	</div>
+</div>
